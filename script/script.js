@@ -19,44 +19,58 @@ for (var i = 0; i < seats.length; i++) {
         p2.innerText = busClass;
         const p3 = document.createElement('p');
         p3.innerText = price;
-        // const p1 = setSelectedSeat(seatName);
 
-        // const div = document.createElement('div');
-        // const div1 = div.classList.add("flex flex-col");
+        const div = document.createElement('div');
+        
         // console.log(div);
-        // console.log(div1);
-        // div.appendChild(p1);
-        // div.appendChild(p2);
-        // div.appendChild(p3);
+        addFlexStyle(div);
+        flexStyleGrow(p1);
+        flexStyleGrow(p2);
+        flexStyleGrow(p3);
 
-        // selectedSeatContainer.appendChild(div);
-        // selectedSeatContainer.appendChild(p1);
-        // selectedSeatContainer.appendChild(p2);
-        // selectedSeatContainer.appendChild(p3);
+        div.appendChild(p1);
+        div.appendChild(p2);
+        div.appendChild(p3);
 
-        // const counter = document.getElementById('bookingCounter').innerText;
-        // const counter = document.getElementById('bookingCounter').innerText;
-        // const parseCounter = parseInt(counter);
-        // const counting = parseCounter + 1;
-        // counter.innerText = counting;
-
-        // count = counting;
-        // console.log('counting',counting);
+        
+        
         count++; // increment sear selection
         console.log('count',count);
-        let counter = document.getElementById('bookingCounter').innerText;
-        counter = count;
-        // counting++;
-        console.log('count',count);
-        // console.log(typeof(counter));
-        // console.log(counting);
+
+        //can only take 4 tickets 
+        if(count <= 4){
+            document.getElementById("bookingCounter").innerText = count;
+            let theSeatCounter = parseInt(document.getElementById("seatCount").innerText);
+            document.getElementById("seatCount").innerText = theSeatCounter - 1;
+            addGreenStyle(seat);
+            // console.log(seat.innerText);
+            selectedSeatContainer.appendChild(div);
+            
+            totalCount(total);
+
+        }else{
+            alert('You can not select more!');
+        }
+        
     });
 
-    // function setSelectedSeat(e){
-    //     const p = document.createElement('p');
-    //     p.innerText = e;
+    function addGreenStyle(e){
+        e.style.backgroundColor = 'green';
+    }
 
-    //     return p.innerText;
-    // }
+    function addFlexStyle(e){
+        e.style.display = 'flex';
+        e.style.flexDirection = 'row';        
+    }
+
+    function flexStyleGrow(e){        
+        e.style.flexGrow = 1;
+    }
+
+    function totalCount(e){
+        let totalCount = parseInt(document.getElementById("total").innerText);
+        console.log(parseInt(document.getElementById("total").innerText));
+        document.getElementById("total").innerText = totalCount + price;
+    }
 
 }
