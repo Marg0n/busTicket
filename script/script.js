@@ -1,7 +1,16 @@
 
 let count =0;
 const price = 550;
+const NEW15 = 0.15;
+const Couple20 = 0.2;
 const busClass = "Economoy";
+
+// document.getElementById('coupon').addEventListener('click', () =>{
+//     const couponCode = document.getElementById('coupon').value;
+//     console.log(couponCode);
+
+//     grandTotalCountCoupon(couponCode);
+// });
 
 const seats = document.querySelectorAll('.bookSeat');
 
@@ -37,6 +46,7 @@ for (var i = 0; i < seats.length; i++) {
         count++; // increment sear selection
         console.log('count',count);
 
+        
         //can only take 4 tickets 
         if(count <= 4){
             document.getElementById("bookingCounter").innerText = count;
@@ -46,7 +56,16 @@ for (var i = 0; i < seats.length; i++) {
             // console.log(seat.innerText);
             selectedSeatContainer.appendChild(div);
             
-            totalCount(total);
+            totalCount("total");
+            totalCount("grandTotal");
+
+            if(count === 4){
+                document.getElementById("couponContainer").classList.remove("hidden");
+                                
+            }
+
+            // grandTotalCount("grandTotal");
+           
 
         }else{
             alert('You can not select more!');
@@ -68,9 +87,31 @@ for (var i = 0; i < seats.length; i++) {
     }
 
     function totalCount(e){
-        let totalCount = parseInt(document.getElementById("total").innerText);
-        console.log(parseInt(document.getElementById("total").innerText));
-        document.getElementById("total").innerText = totalCount + price;
+        let totalCount = parseInt(document.getElementById(e).innerText);
+        document.getElementById(e).innerText = totalCount + price;
+    }
+
+    
+    function hasCoupon(c){
+
+        const couponCode = document.getElementById(c).value;
+        console.log(couponCode);
+
+        let totalGrandCount = parseInt(document.getElementById("grandTotal").innerText);
+        console.log(totalGrandCount);
+                
+        if(couponCode === 'NEW15'){
+            const discount = totalGrandCount * NEW15;
+            document.getElementById("grandTotal").innerText = totalGrandCount - discount;
+            document.getElementById("couponContainer").classList.add("hidden");
+        }else if(couponCode === 'Couple 20'){
+            const discount = totalGrandCount * Couple20;
+            document.getElementById("grandTotal").innerText = totalGrandCount - discount;
+            document.getElementById("couponContainer").classList.add("hidden");
+        }else{
+            alert('Please give the right coupon!');
+        }
+        
     }
 
 }
