@@ -133,18 +133,143 @@
           </div>
       </section>
 
-      <section id="booking">
-        <div class="min-h-screen bg-red-400 pt-16 rounded-t-3xl">
-            <div class="bg-green-700 text-center">
+      <section id="booking" class="container mx-auto">
+        <div class="min-h-screen ">
+            <div class=" text-center  pt-16 border-t-2 border-t-green-500  rounded-t-full">
                 <h2 class="text-5xl font-bold">P. Paribahan</h2>
                 <p class="text-2xl mt-4">Your most trusted Travel partner! Buy a ticket now!</p>
             </div>
-            <div></div>
+
+            <div class="flex divide-x-2 divide-green-500 divide-dashed mt-20 pt-4">
+                <div class="w-4/5 px-20">
+                    <!-- 1st div -->
+                    <div class="flex mb-4 lg:flex-row flex-col">
+                        <div class="lg:w-4/5 flex gap-6">
+                            <img src="images/bus-logo.png" alt="">
+                            <div>                                
+                                <p class="text-3xl font-bold">Greenline Paribahan</p>
+                                <p class="text-lg">Coach-009-WEB ! AC_Business</p>
+                            </div>
+                        </div>
+                        <div class="lg:w-1/5 ">
+                            <button class="btn bg-green-500 border-none w-fit text-xl">
+                                <img src="images/seat-green.png" alt="">
+                                <span id="seatCount">0</span> Seat Left
+                            </button>
+                        </div>
+                    </div>
+
+                    <!-- 2nd div -->                    
+
+                    <div class="divide-y divide-dashed divide-gray-500">
+                        <div class="flex justify-between py-4">                 
+                            <p class="text-lg font-semibold">Route</p>
+                            <p class="text-xl font-bold text-center">Dhaka - Sylhet</p>                                
+                        </div>
+
+                        <div class="flex justify-between py-4">                 
+                            <p class="text-lg font-semibold">Departure Time</p>
+                            <p class="text-xl font-bold">9:00 PM</p>                                
+                        </div>
+
+                        <div class="flex justify-between py-4 lg:flex-row flex-col gap-3">                 
+                            <button class="btn btn-neutral">Boarding Point - Laxmipur</button>                            
+                            <button class="btn btn-neutral">Dropping Point - Bogura</button>                            
+                            <button class="btn btn-neutral">Est. Time - 11 Hour</button>                            
+                        </div>
+                    </div>
+                </div>
+
+                <div class="w-1/5 text-center lg:pt-16 pt-32">
+                    <div class="w-ful flex justify-center">
+                        <img class="" src="images/fare.png" alt="takaIcon">
+                    </div>                    
+                    <h2 class="text-4xl font-bold">550 Taka</h2>
+                    <p class="text-2xl">Per Seat</p>
+                </div>
+            </div>
+        </div>
+
+         <!-- ticket selection -->
+         <div class=" flex divide-x-2 divide-green-500 divide-dashed pt-4">
+            <!-- left side -->
+            <div class="w-3/5 divide-y divide-dashed divide-gray-500 px-20">
+                <div class="flex justify-between py-4">                 
+                    <h3 class="text-xl font-bold">Select Your Seat</h3>                               
+                </div>
+
+                <div class="flex justify-between py-4">                 
+                    <p class="text-lg font-semibold flex">
+                        <img src="images/seat-gray.png" alt="">
+                        Available
+                    </p>
+                    <p class="text-xl font-bold flex">
+                        <img src="images/seat-green-filled.png" alt="">
+                        <span class="text-green-500">Selected</span>
+                    </p>                                
+                </div>
+
+                <!-- seats -->
+                <div class="w-full flex flex-col pt-8 gap-2 ">
+                    <div class="w-full flex justify-end">
+                        <button class="w-28 h-16 btn bg-slate-300 ">
+                            <img src="images/steering-wheel.png" alt="">
+                        </button>
+                    </div>
+
+                    <div class="flex gap-4 mt-8">
+                        <div class="w-1/5">
+                            <button class="btn bg-slate-300 w-12 h-16">A</button>
+                        </div>
+                        <div class="w-2/5 flex justify-between">
+                            <button class="btn bg-slate-300 w-28 h-16 ">A1</button>
+                            <button class="btn bg-slate-300 w-28 h-16 ">A2</button>
+                        </div>
+                        <div class="w-2/5 flex justify-between">
+                            <button class="btn bg-slate-300 w-28 h-16 ">A3</button>
+                            <button class="btn bg-slate-300 w-28 h-16 ">A4</button>
+                        </div>
+                    </div>
+                    <div class="flex gap-4 ">
+                        <div class="w-1/5">
+                            <button class="btn bg-slate-300 w-12 h-16">B</button>
+                        </div>
+                        <div class="w-2/5 flex justify-between">
+                            <button class="btn bg-slate-300 w-28 h-16 ">B1</button>
+                            <button class="btn bg-slate-300 w-28 h-16 ">B2</button>
+                        </div>
+                        <div class="w-2/5 flex justify-between">
+                            <button class="btn bg-slate-300 w-28 h-16 ">B3</button>
+                            <button class="btn bg-slate-300 w-28 h-16 ">B4</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- right side -->
+            <div class="w-2/5 divide-y divide-dashed divide-gray-500 px-10 ">
+                <div class="flex justify-between py-4">                 
+                    <h3 class="text-xl font-bold">Select Your Seat</h3>                               
+                </div>
+
+                <div class="flex justify-between py-4">                 
+                    <p class="text-xl font-semibold flex">
+                        Seat
+                    </p>
+                    <p class="text-xl font-semibold flex">
+                        Class
+                    </p>                                
+                    <p class="text-xl font-semibold flex">
+                        Price
+                    </p>                                
+                </div>
+            </div>
+            
         </div>
       </section>
     </main>
 
-      <footer class="footer pt-20 pb-10 px-20 bg-slate-950 text-white flex flex-col divide-y divide-dashed divide-opacity-40">
+      <footer class="footer mt-16 pt-20 pb-10 px-20 bg-slate-950 text-white flex flex-col divide-y divide-dashed divide-opacity-40">
         <div class=" w-full lg:flex ">
             <aside class="lg:w-1/2 ">
                 <h1 class="text-4xl font-bold mb-4">P-Ticket</h1>
