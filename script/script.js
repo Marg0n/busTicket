@@ -75,6 +75,7 @@ for (var i = 0; i < seats.length; i++) {
 
     function addGreenStyle(e){
         e.style.backgroundColor = 'green';
+        disabled(e);
     }
 
     function addFlexStyle(e){
@@ -91,7 +92,10 @@ for (var i = 0; i < seats.length; i++) {
         document.getElementById(e).innerText = totalCount + price;
     }
 
-    
+    function disabled(e){
+        e.setAttribute("disabled",true);
+    }
+
     function hasCoupon(c){
 
         const couponCode = document.getElementById(c).value;
