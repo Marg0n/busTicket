@@ -14,9 +14,14 @@ const busClass = "Economoy";
 // disabling initially
 const inputNumber = document.getElementById("phNumber");
 const nextKey = document.getElementById("next");
+const couponContainerDiv = document.getElementById("couponContainer");
+
+// console.log(couponContainerDiv.children[0]);
 
 disabled(nextKey);
 disabled(inputNumber);
+disabled(couponContainerDiv.children[0]);
+disabled(couponContainerDiv.children[1]);
 
 const seats = document.querySelectorAll(".bookSeat");
 
@@ -65,7 +70,9 @@ for (var i = 0; i < seats.length; i++) {
       totalCount("grandTotal");
 
       if (count === 4) {
-        document.getElementById("couponContainer").classList.remove("hidden");
+        // document.getElementById("couponContainer").classList.remove("hidden");
+        enabled(couponContainerDiv.children[0]);
+        enabled(couponContainerDiv.children[1]);
       }
 
       //phone number next key validation / enable
@@ -78,17 +85,13 @@ for (var i = 0; i < seats.length; i++) {
 
         inputNumber.addEventListener("keyup", () => {
           const parseInputNumber = parseInt(inputNumber.value);
-          console.log(parseInputNumber);
+        //   console.log(parseInputNumber);
           if (!isNaN(parseInputNumber)) {
             enabled(nextKey);
           }
         });
       }
-      inputNumber.addEventListener("keyup", () => {
-        const parseInputNumber = parseInt(inputNumber.value);
-        console.log(parseInputNumber);
-        console.log(count);
-      });
+      
 
       // Enabling a disabled button to enable it again
       // document.getElementById('next').disabled = false;
