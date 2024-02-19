@@ -72,15 +72,16 @@ for (var i = 0; i < seats.length; i++) {
 
       if (count >= 1) {
         enabled(inputNumber);
-        enabled(nextKey);
 
-        console.log(inputNumber);
-        console.log(nextKey);
+        // console.log(inputNumber);
+        // console.log(nextKey);
 
         inputNumber.addEventListener("keyup", () => {
           const parseInputNumber = parseInt(inputNumber.value);
           console.log(parseInputNumber);
-          console.log(count);
+          if (!isNaN(parseInputNumber)) {
+            enabled(nextKey);
+          }
         });
       }
       inputNumber.addEventListener("keyup", () => {
